@@ -120,6 +120,78 @@
     "long_pauses": 0
   },
   {
+    "voice": "piper_pace",
+    "passage": "p1_narrative",
+    "file": "norm/piper_pace/p1_narrative.wav",
+    "duration_s": 30.09,
+    "chars": 401,
+    "chars_per_s": 13.3,
+    "lufs": -19.0,
+    "true_peak_dbfs": -3.0,
+    "silence_share": 0.145,
+    "long_pauses": 1
+  },
+  {
+    "voice": "piper_pace",
+    "passage": "p2_dialogue",
+    "file": "norm/piper_pace/p2_dialogue.wav",
+    "duration_s": 25.03,
+    "chars": 340,
+    "chars_per_s": 13.6,
+    "lufs": -18.9,
+    "true_peak_dbfs": -3.0,
+    "silence_share": 0.176,
+    "long_pauses": 1
+  },
+  {
+    "voice": "piper_pace",
+    "passage": "p3_numbers",
+    "file": "norm/piper_pace/p3_numbers.wav",
+    "duration_s": 47.86,
+    "chars": 453,
+    "chars_per_s": 9.5,
+    "lufs": -18.9,
+    "true_peak_dbfs": -3.0,
+    "silence_share": 0.086,
+    "long_pauses": 1
+  },
+  {
+    "voice": "piper_pace_soft",
+    "passage": "p1_narrative",
+    "file": "norm/piper_pace_soft/p1_narrative.wav",
+    "duration_s": 30.13,
+    "chars": 401,
+    "chars_per_s": 13.3,
+    "lufs": -19.0,
+    "true_peak_dbfs": -3.0,
+    "silence_share": 0.131,
+    "long_pauses": 1
+  },
+  {
+    "voice": "piper_pace_soft",
+    "passage": "p2_dialogue",
+    "file": "norm/piper_pace_soft/p2_dialogue.wav",
+    "duration_s": 25.06,
+    "chars": 340,
+    "chars_per_s": 13.6,
+    "lufs": -18.9,
+    "true_peak_dbfs": -3.0,
+    "silence_share": 0.159,
+    "long_pauses": 1
+  },
+  {
+    "voice": "piper_pace_soft",
+    "passage": "p3_numbers",
+    "file": "norm/piper_pace_soft/p3_numbers.wav",
+    "duration_s": 47.89,
+    "chars": 453,
+    "chars_per_s": 9.5,
+    "lufs": -18.9,
+    "true_peak_dbfs": -3.0,
+    "silence_share": 0.084,
+    "long_pauses": 1
+  },
+  {
     "voice": "piper_stress",
     "passage": "p1_narrative",
     "file": "norm/piper_stress/p1_narrative.wav",

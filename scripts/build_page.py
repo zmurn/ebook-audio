@@ -26,6 +26,16 @@ VOICES = {
         "meta": "številke pustimo eSpeaku (boljši naglas), popravimo le napake + imena",
         "always": True,
     },
+    "piper_pace": {
+        "name": "Piper · Sloleks + pavze",
+        "meta": "naglas + premori na vejicah, brez obdelave",
+        "always": True,
+    },
+    "piper_pace_soft": {
+        "name": "Piper · Sloleks + pavze + mehka obdelava",
+        "meta": "kot H, z nežnim EQ, kompresijo in malo sobe",
+        "always": True,
+    },
     "piper_stress": {
         "name": "Piper · Sloleks naglas",
         "meta": "naglas iz slovarske baze Sloleks (brezplačno, lokalno)",
@@ -76,7 +86,7 @@ def main() -> None:
     # stable labels: A/B/C keep the names earlier rounds used, D is the new one
     LABELS = {"apple_tina": "A", "piper_artur": "B", "piper_norm": "C",
               "piper_textfix": "D", "piper_min": "E", "piper_min_nopron": "F",
-              "piper_stress": "G"}
+              "piper_stress": "G", "piper_pace": "H", "piper_pace_soft": "I"}
     voices = sorted(voices, key=lambda v: LABELS.get(v, "Z"))
     labels = {v: LABELS.get(v, chr(65 + i)) for i, v in enumerate(voices)}
 

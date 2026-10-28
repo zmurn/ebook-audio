@@ -449,3 +449,46 @@ Preverjeno: `1848`, `36.500`, `65 %`, `15 minut`, `3 ure` ostanejo števke;
 
 Cevovod zdaj privzeto uporablja minimalni način; `--full-text` vrne starega.
 Testi: 23 (dodani testi za minimalni način).
+
+
+---
+
+# Krog 9 — ritem in »avtotune« (28. 10. 2026)
+
+Tvoja ocena: *»bolje, a nekatere besede še vedno izpljune prehitro; glas zveni
+preveč avtotune.«*
+
+## Ritem: kaj je bilo narobe
+
+Sloleks verzija (G) je govorila vsako poved v enem kosu, s hitrostjo 1,0 in le
+0,35 s med povedmi. Zato so se naštevani deli zlili.
+
+**H** zdaj dela to:
+
+| Meja | Premor |
+|---|---|
+| vejica | 0,16 s |
+| podpičje/dvopičje | 0,22 s |
+| konec povedi | 0,45 s (vprašanje 0,55 s) |
+| konec odstavka | 0,85 s |
+
+Poleg tega se hitrost spreminja z dolžino povedi (0,99–1,06), osnova pa je 1,02.
+Trajanje se je zato podaljšalo za ~6–7 % (p1 28,2 → 30,1 s, p3 44,7 → 47,9 s).
+
+**I** je H + nežna obdelava: blažji EQ (manj 2,6 kHz in 7,2 kHz), blaga
+kompresija, mala soba, low-pass pri 12 kHz.
+
+## »Avtotune«
+
+To ni naglas in ne ritem — to je **vocoder 22 kHz VITS modela**. Spekter je
+»kovinski« in F0 je skoraj konstanten; nobena nastavitev tega ne odpravi.
+Možnosti so le:
+
+1. **sprejeti** (H/I sta najboljše, kar ta model da),
+2. **nežna obdelava** (I) — omili sijaj, ne spremeni barve,
+3. **drug model** — Kokoro fine-tune ali plačljiv oblak.
+
+## Poslušaj
+
+Na strani so zdaj G (naglas), H (naglas + pavze) in I (H + mehka obdelava).
+Primerjaj H z G za ritem in I s H za barvo.

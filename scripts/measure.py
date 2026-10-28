@@ -29,6 +29,18 @@ VOICES = {
         "params": "63 MB",
         "note": "Številke kot števke, popravljene le napake.",
     },
+    "piper_pace": {
+        "name": "Piper · Sloleks + pavze",
+        "engine": "VITS + Sloleks + clause pauses",
+        "params": "63 MB + 5,9 MB",
+        "note": "Premori na vejicah, brez obdelave.",
+    },
+    "piper_pace_soft": {
+        "name": "Piper · Sloleks + pavze + mehka obdelava",
+        "engine": "VITS + Sloleks + pauses + soft EQ",
+        "params": "63 MB + 5,9 MB",
+        "note": "Nežen EQ, kompresija, mala soba.",
+    },
     "piper_stress": {
         "name": "Piper · Sloleks naglas",
         "engine": "VITS + Sloleks naglas",

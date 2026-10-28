@@ -14,6 +14,12 @@ Objektivne meritve so samo preverjanje razumljivosti in glasnosti. Naravnost in 
 | piper_min | p3_numbers | 42.95 s | 10.5 | -19.5 | -3.0 | 1.0% | 0 |
 | piper_min_nopron | p3_numbers | 43.15 s | 10.5 | -18.9 | -3.0 | 1.0% | 0 |
 | piper_norm | p3_numbers | 44.93 s | 10.1 | -19.0 | -3.0 | 4.8% | 0 |
+| piper_pace | p1_narrative | 30.09 s | 13.3 | -19.0 | -3.0 | 14.5% | 1 |
+| piper_pace | p2_dialogue | 25.03 s | 13.6 | -18.9 | -3.0 | 17.6% | 1 |
+| piper_pace | p3_numbers | 47.86 s | 9.5 | -18.9 | -3.0 | 8.6% | 1 |
+| piper_pace_soft | p1_narrative | 30.13 s | 13.3 | -19.0 | -3.0 | 13.1% | 1 |
+| piper_pace_soft | p2_dialogue | 25.06 s | 13.6 | -18.9 | -3.0 | 15.9% | 1 |
+| piper_pace_soft | p3_numbers | 47.89 s | 9.5 | -18.9 | -3.0 | 8.4% | 1 |
 | piper_stress | p1_narrative | 28.21 s | 14.2 | -19.0 | -3.0 | 9.7% | 0 |
 | piper_stress | p2_dialogue | 22.94 s | 14.8 | -18.9 | -3.0 | 13.6% | 0 |
 | piper_stress | p3_numbers | 44.72 s | 10.1 | -18.9 | -3.0 | 6.0% | 0 |
@@ -37,6 +43,8 @@ Objektivne meritve so samo preverjanje razumljivosti in glasnosti. Naravnost in 
 - **Piper · B + minimalni popravki** — VITS, minimalna normalizacija + imena, 63 MB. Številke kot števke, popravljene le napake.
 - **Piper · B + minimalni popravki brez imen** — VITS, minimalna normalizacija, 63 MB. Brez izgovornega slovarja.
 - **Piper · artur + norm_sl + pron_sl** — VITS + normalizacija + izgovorni slovar + tempo, 63 MB. Isti glas kot piper_artur, le besedilo je normalizirano (samo p3).
+- **Piper · Sloleks + pavze** — VITS + Sloleks + clause pauses, 63 MB + 5,9 MB. Premori na vejicah, brez obdelave.
+- **Piper · Sloleks + pavze + mehka obdelava** — VITS + Sloleks + pauses + soft EQ, 63 MB + 5,9 MB. Nežen EQ, kompresija, mala soba.
 - **Piper · Sloleks naglas** — VITS + Sloleks naglas, 63 MB + 5,9 MB tabele. Naglas iz slovarske baze, brez oblaka.
 - **Piper · B + norm_sl + pron_sl** — VITS, brez obdelave, 63 MB. Iste nastavitve kot B, le besedilo je popravljeno.
 - **piper_v1** — ?, ?. 
