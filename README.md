@@ -42,6 +42,25 @@ ustvari `setup.sh` oziroma prvi zagon. Velikost klona je nekaj MB.
 | 3. Predvajalnik (poglavja, hitrost, spanje, nadaljevanje) | delno — spletni predvajalnik s poglavji |
 | 4. Več jezikov, kloniranje glasu z dovoljenjem | ni začeto |
 
+## Naglas iz Sloleks (neobvezno, brezplačno)
+
+eSpeak ugiba naglas pri besedah, ki jih ne pozna. Sloleks 2.0 ima naglašene oblike
+za ~888.000 besednih oblik; uporabimo jih kot tabelo naglasa.
+
+```bash
+./scripts/get_sloleks.sh        # 46 MB prenosa + 1,3 GB razpakiranja + 6 MB tabele
+```
+
+Nato v aplikaciji obkljukaj **Sloleks naglas**, ali:
+
+```bash
+.venv-app/bin/python pipeline.py knjiga.epub -o knjiga.m4b --stress
+```
+
+Podatki so licencirani **CC BY-NC-SA 4.0** (osebna raba); tabela se ne commita.
+Pristop: eSpeak fonemizira celo poved (ohrani kontekst in ločila), mi premaknemo
+samo oznako naglasa. Dvoumne oblike (`samo/samó/sámo`) se **preskočijo**, ne ugibajo.
+
 ## PDF in skenirane kopije
 
 `pdf_ingest.py` odloči **na vsaki strani posebej**:

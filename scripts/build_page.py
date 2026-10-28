@@ -26,6 +26,11 @@ VOICES = {
         "meta": "številke pustimo eSpeaku (boljši naglas), popravimo le napake + imena",
         "always": True,
     },
+    "piper_stress": {
+        "name": "Piper · Sloleks naglas",
+        "meta": "naglas iz slovarske baze Sloleks (brezplačno, lokalno)",
+        "always": True,
+    },
     "piper_min_nopron": {
         "name": "Piper · B + minimalni popravki, brez imen",
         "meta": "kot E, a imena ostanejo taka, kot jih bere eSpeak",
@@ -70,7 +75,8 @@ def main() -> None:
     # Fixed blind shuffle: label order must not correlate with plausibility.
     # stable labels: A/B/C keep the names earlier rounds used, D is the new one
     LABELS = {"apple_tina": "A", "piper_artur": "B", "piper_norm": "C",
-              "piper_textfix": "D", "piper_min": "E", "piper_min_nopron": "F"}
+              "piper_textfix": "D", "piper_min": "E", "piper_min_nopron": "F",
+              "piper_stress": "G"}
     voices = sorted(voices, key=lambda v: LABELS.get(v, "Z"))
     labels = {v: LABELS.get(v, chr(65 + i)) for i, v in enumerate(voices)}
 

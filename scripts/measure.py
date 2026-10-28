@@ -29,6 +29,12 @@ VOICES = {
         "params": "63 MB",
         "note": "Številke kot števke, popravljene le napake.",
     },
+    "piper_stress": {
+        "name": "Piper · Sloleks naglas",
+        "engine": "VITS + Sloleks naglas",
+        "params": "63 MB + 5,9 MB tabele",
+        "note": "Naglas iz slovarske baze, brez oblaka.",
+    },
     "piper_min_nopron": {
         "name": "Piper · B + minimalni popravki brez imen",
         "engine": "VITS, minimalna normalizacija",

@@ -152,3 +152,32 @@ engine-independent and already built, so the switch costs one adapter.
 - ElevenLabs v4 languages + PVC: <https://elevenlabs.io/docs/help-center/product/voices/voice-cloning/what-languages-are-supported-with-professional-voice-cloning-pvc>
 - ElevenLabs pronunciation dictionaries: <https://elevenlabs.io/docs/eleven-api/guides/how-to/text-to-speech/pronunciation-dictionaries>
 - ElevenLabs pricing: <https://elevenlabs.io/pricing>
+
+
+---
+
+## 6. What was built (100% local, 0 €)
+
+The paid route was dropped. Instead:
+
+- `scripts/build_sloleks_stress.py` → **888,148 word forms**, 5.9 MB gzip table.
+  **8,259 forms (0.9 %) are homographs** with different stress (`samo/samó/sámo`,
+  `vratu/vratú/vrátu`) and are skipped rather than guessed.
+- `sl_stress.py` moves the stress mark in Piper's phonemes to the Sloleks syllable.
+- `stress_tts.py` phonemises the whole sentence with eSpeak (so `vleklo → ulˈeːklɔ`
+  allophony and punctuation survive), splits at word boundaries, and only edits
+  the stress mark before synthesising from phoneme IDs.
+- Wired into the pipeline (`--stress`) and the app (checkbox **Sloleks naglas**).
+
+Measured on the test passages: 13 stress corrections per ~50 words on p1
+(`travnikov`, `vstajajo`, `zgodaj`, `ljudje`, `nasmehnila` …), 13 on p3, 4 on p2.
+eSpeak is already right on many common words; the gains are in less frequent and
+inflected forms.
+
+Rejected: synthesising **word by word**. It preserved stress but degraded the
+phoneme stream (ASR coverage 60 % vs 58 % baseline, visibly garbled transcript),
+so sentence-level phonemes with in-place stress editing won.
+
+Known limits: Sloleks does not stress every foreign name (`Bregović` has no
+accent), so `pron_sl` still handles those; and if the word count does not align
+with eSpeak's chunks, that sentence is left untouched.

@@ -143,6 +143,8 @@
                 <span>Tempo in pavze <small>počasnejši tempo, daljše pavze</small></span></label>
               <label class="check"><input type="checkbox" id="studio">
                 <span>Topel zvok in soba <small>EQ, kompresija, prostor</small></span></label>
+              <label class="check"><input type="checkbox" id="stress">
+                <span>Sloleks naglas <small>naglas iz slovarske baze, brezplačno</small></span></label>
             </div>
           </fieldset>
 
@@ -333,6 +335,7 @@ async function startRender() {
   const settings = {
     mode: document.querySelector('input[name=mode]:checked').value,
     names: $('names').checked, pace: $('pace').checked, studio: $('studio').checked,
+    stress: $('stress').checked,
   };
   try {
     const {job_id} = await api(`/api/books/${b.id}/render`, {

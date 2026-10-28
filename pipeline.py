@@ -44,6 +44,9 @@ MAX_CHUNK = 380
 # fix money, dates, ordinals, symbols and abbreviations, leave digits alone.
 MINIMAL_NORMALIZATION = True
 
+# Sloleks stress correction (local). Off by default until it is A/B tested.
+STRESS_MODE = False
+
 # Warmth + glue + a small room. Measured effect: spectral centroid 1.15 → 1.07 kHz,
 # pitch movement unchanged (5.2–5.7 semitones either way).
 STUDIO_CHAIN = (
@@ -208,6 +211,9 @@ def say(text: str, speed: float = 1.0) -> Path | None:
     text = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", " ", text).strip()
     if not re.search(r"\w", text):
         return None
+    if STRESS_MODE:
+        import stress_tts
+        return stress_tts.synthesize(text, speed)
     key = hashlib.sha1(f"{MODEL.name}|{speed:.3f}|{text}".encode()).hexdigest()
     out = CACHE / key[:2] / f"{key}.wav"
     if out.exists():
@@ -376,11 +382,14 @@ def main() -> None:
     ap.add_argument("--full-text", action="store_true",
                     help="spell out numbers too (worse stress, use for testing)")
     ap.add_argument("--no-names", action="store_true", help="skip the pronunciation lexicon")
+    ap.add_argument("--stress", action="store_true",
+                    help="use Sloleks stress positions (local, experimental)")
     args = ap.parse_args()
 
-    global MINIMAL_NORMALIZATION
+    global MINIMAL_NORMALIZATION, STRESS_MODE
     if args.full_text:
         MINIMAL_NORMALIZATION = False
+    STRESS_MODE = args.stress
 
     src = Path(args.epub)
     out = Path(args.out) if args.out else src.with_suffix(".m4b")
