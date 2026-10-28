@@ -492,3 +492,45 @@ Možnosti so le:
 
 Na strani so zdaj G (naglas), H (naglas + pavze) in I (H + mehka obdelava).
 Primerjaj H z G za ritem in I s H za barvo.
+
+---
+
+# Krog 10 — ali obstaja lahka AI izboljšava glasu? (28. 10. 2026)
+
+Da. Pregledal sem projekte in enega preizkusil.
+
+| Projekt | Velikost | Licenca | Hitrost | Kaj naredi |
+|---|---|---|---|---|
+| **LavaSR** | 50 MB | Apache-2.0 | ~50× CPU | izboljšava govora, 8–48 kHz vhod |
+| NovaSR | 52 KB | Apache-2.0 | ~3000× | 16k → 48k, nižja kakovost |
+| Resemble Enhance | ~več 100 MB | MIT | počasneje | denoise + enhance |
+| OpenVoice v2 | ~100 MB | MIT | srednje | menjava barve glasu (potreben vzorec) |
+| RVC | ~1 GB | MIT | ~real-time | konverzija v ciljni glas (potreben model) |
+| Seed-VC | ~500 MB | GPL-3.0 | počasneje | zero-shot konverzija glasu |
+| AudioSR / FlashSR | 2–6 GB | MIT | 0,6–14× | difuzijska nadgradnja, pretežko |
+
+## Preizkus: LavaSR na H
+
+LavaSR sem pognal na H (naglas + pavze) za vse tri odlomke. Rezultat:
+
+| | Središče spektra | F0 SD | Trajanje |
+|---|---|---|---|
+| H | 1,17 / 1,09 / 1,12 kHz | 5,5 | 30,1 s |
+| **J (H + LavaSR)** | **0,97 / 0,96 / 0,98 kHz** | 5,4 | 30,1 s |
+
+Torej: spekter se **ohladi** za ~15 %, trajanje in naglas ostaneta ista.
+Nič ne doda »življenja« v melodijo — samo drugače obarva zvok.
+
+## Sklep
+
+Nobena od teh orodij ne odpravi »avtotune« značaja, ker je ta v vocoderju.
+Lahke rešitve lahko:
+
+- **omilijo sijaj** (LavaSR, Resemble Enhance),
+- **zamenjajo barvo** (OpenVoice, RVC — a potrebujejo ciljni glas in pogosto
+  dodajo svoje artefakte),
+- **povečajo pasovno širino** (NovaSR — 16 kHz vhod, naša govorica je 22 kHz).
+
+Prava sprememba ostaja **drug model** (Kokoro fine-tune) ali oblak.
+
+Na strani je zdaj **J = H + LavaSR**; primerjaj H in J.

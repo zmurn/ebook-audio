@@ -35,6 +35,12 @@ VOICES = {
         "params": "63 MB + 5,9 MB",
         "note": "Premori na vejicah, brez obdelave.",
     },
+    "piper_lava": {
+        "name": "Piper · H + LavaSR",
+        "engine": "VITS + Sloleks + LavaSR enhance",
+        "params": "63 MB + 50 MB",
+        "note": "AI izboljšava govora po sintezi.",
+    },
     "piper_pace_soft": {
         "name": "Piper · Sloleks + pavze + mehka obdelava",
         "engine": "VITS + Sloleks + pauses + soft EQ",
