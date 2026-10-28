@@ -1,0 +1,122 @@
+[
+  {
+    "voice": "apple_tina",
+    "passage": "p1_narrative",
+    "file": "norm/apple_tina/p1_narrative.wav",
+    "duration_s": 24.74,
+    "chars": 401,
+    "chars_per_s": 16.2,
+    "lufs": -18.9,
+    "true_peak_dbfs": -3.9,
+    "silence_share": 0.0,
+    "long_pauses": 0
+  },
+  {
+    "voice": "apple_tina",
+    "passage": "p2_dialogue",
+    "file": "norm/apple_tina/p2_dialogue.wav",
+    "duration_s": 20.55,
+    "chars": 340,
+    "chars_per_s": 16.5,
+    "lufs": -18.8,
+    "true_peak_dbfs": -4.8,
+    "silence_share": 0.0,
+    "long_pauses": 0
+  },
+  {
+    "voice": "apple_tina",
+    "passage": "p3_numbers",
+    "file": "norm/apple_tina/p3_numbers.wav",
+    "duration_s": 41.79,
+    "chars": 453,
+    "chars_per_s": 10.8,
+    "lufs": -18.9,
+    "true_peak_dbfs": -3.0,
+    "silence_share": 0.0,
+    "long_pauses": 0
+  },
+  {
+    "voice": "piper_artur",
+    "passage": "p1_narrative",
+    "file": "norm/piper_artur/p1_narrative.wav",
+    "duration_s": 27.1,
+    "chars": 401,
+    "chars_per_s": 14.8,
+    "lufs": -18.9,
+    "true_peak_dbfs": -3.0,
+    "silence_share": 0.089,
+    "long_pauses": 0
+  },
+  {
+    "voice": "piper_artur",
+    "passage": "p2_dialogue",
+    "file": "norm/piper_artur/p2_dialogue.wav",
+    "duration_s": 23.46,
+    "chars": 340,
+    "chars_per_s": 14.5,
+    "lufs": -18.9,
+    "true_peak_dbfs": -3.0,
+    "silence_share": 0.134,
+    "long_pauses": 0
+  },
+  {
+    "voice": "piper_artur",
+    "passage": "p3_numbers",
+    "file": "norm/piper_artur/p3_numbers.wav",
+    "duration_s": 46.02,
+    "chars": 453,
+    "chars_per_s": 9.8,
+    "lufs": -18.9,
+    "true_peak_dbfs": -3.0,
+    "silence_share": 0.078,
+    "long_pauses": 0
+  },
+  {
+    "voice": "piper_min",
+    "passage": "p3_numbers",
+    "file": "norm/piper_min/p3_numbers.wav",
+    "duration_s": 42.95,
+    "chars": 453,
+    "chars_per_s": 10.5,
+    "lufs": -19.5,
+    "true_peak_dbfs": -3.0,
+    "silence_share": 0.01,
+    "long_pauses": 0
+  },
+  {
+    "voice": "piper_min_nopron",
+    "passage": "p3_numbers",
+    "file": "norm/piper_min_nopron/p3_numbers.wav",
+    "duration_s": 43.15,
+    "chars": 453,
+    "chars_per_s": 10.5,
+    "lufs": -18.9,
+    "true_peak_dbfs": -3.0,
+    "silence_share": 0.01,
+    "long_pauses": 0
+  },
+  {
+    "voice": "piper_norm",
+    "passage": "p3_numbers",
+    "file": "norm/piper_norm/p3_numbers.wav",
+    "duration_s": 49.82,
+    "chars": 453,
+    "chars_per_s": 9.1,
+    "lufs": -19.0,
+    "true_peak_dbfs": -3.0,
+    "silence_share": 0.099,
+    "long_pauses": 1
+  },
+  {
+    "voice": "piper_textfix",
+    "passage": "p3_numbers",
+    "file": "norm/piper_textfix/p3_numbers.wav",
+    "duration_s": 43.04,
+    "chars": 453,
+    "chars_per_s": 10.5,
+    "lufs": -18.9,
+    "true_peak_dbfs": -3.0,
+    "silence_share": 0.0,
+    "long_pauses": 0
+  }
+]

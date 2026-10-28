@@ -1,0 +1,20 @@
+;FFMETADATA1
+title=Vzorec za zvočno knjigo
+album=Vzorec za zvočno knjigo
+artist=Pipeline
+genre=Audiobook
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=33958
+title=Jesensko jutro
+[CHAPTER]
+TIMEBASE=1/1000
+START=33958
+END=81680
+title=Tretje nadstropje
+[CHAPTER]
+TIMEBASE=1/1000
+START=81680
+END=112117
+title=Zadnji list

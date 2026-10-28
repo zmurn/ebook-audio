@@ -1,0 +1,65 @@
+# Slovenian pronunciation lexicon for the Piper front-end.
+#
+# Why this exists: eSpeak's Slovenian G2P applies ad-hoc German/English rules to
+# foreign names — Mozart comes out as [moːzart] (should be [moːtsart]), Bach as
+# [baːtsx], Beethoven as [bitxoːvən]. Respelling the name the way Slovenian
+# actually adapts it fixes the phonemes.
+#
+# Columns: source <TAB> respelling <TAB> note
+# Check any entry with:  espeak-ng -v sl -q --ipa "<respelling>"
+#
+# Known limitation: eSpeak ignores explicit stress marks, so a few names keep
+# its default (usually penultimate) stress. Marked with "stress:".
+
+Mozart	Mocart	nem. z → c
+Bach	Bah	nem. ch po a → h
+Beethoven	Betoven	stress: eSpeak naglasi 2. zlog
+Laibach	Lajbah	nem. ei → aj, ch → h
+Shakespeare	Šekspir	ustaljeno slovensko ime
+Goethe	Gete	ustaljeno slovensko ime
+Schubert	Šubert	nem. sch → š
+Wagner	Vagner	nem. w → v
+Strauss	Štraus	nem. ss → s
+Haydn	Hajdn	nem. ay → aj
+Nietzsche	Niče	nem. ie → i, tz → c
+Freud	Frojd	nem. eu → oj
+Brecht	Breht	nem. ch → h
+Hesse	Hese	nem. ss → s
+Zweig	Cvajg	nem. z → c, ei → aj
+Marx	Marks	nem. x → ks
+Camus	Kami	stress: francoski končni naglas
+Dumas	Dima	fr. u → i
+Hugo	Igo	fr. h nemo, u → i
+Flaubert	Flober	fr. eau → o
+Rousseau	Ruso	fr. ou → u
+Voltaire	Volter	fr. oi → oa→o
+Balzac	Balzak	fr. c → k
+Stendhal	Stendal	fr. ph → f
+Proust	Proust	fr. ou → u
+Boccaccio	Bokačo	it. cc → k, c → č
+Machiavelli	Makiaveli	it. ch → k
+Puccini	Pučini	it. c → č
+Petrarch	Petrarka	it. ch → k
+Rachmaninoff	Rahmaninov	rus. h → h
+Tchaikovsky	Čajkovski	rus. tch → č
+Chekhov	Čehov	rus. kh → h
+Orwell	Orvel	angl. w → v
+Hemingway	Hemingvej	angl. w → v, ay → ej
+Faulkner	Fokner	angl. au → o
+Steinbeck	Stajnbek	angl. ei → aj
+Joyce	Džojs	angl. j → dž
+Dickens	Dikens	angl. ck → k
+Austen	Ostin	angl. au → o
+Melville	Melvil	angl. l → w (slovensko)
+Whitman	Vitman	angl. wh → v
+Woolf	Vulf	angl. oo → u
+Hollywood	Holivud	ustaljeno slovensko ime
+New York	Njujork	ustaljeno slovensko ime
+Sherlock Holmes	Šerlok Holms	ustaljeno slovensko ime
+Chișinău	Kišinjev	ustaljeno slovensko ime
+Beethovna	Betovna	rodilnik
+Beethovnu	Betovnu	dajalnik/mestnik
+Beethovnom	Betovnom	orodnik
+Beethovnov	Betovnov	svojilni
+Bregović	Bre-gović	naglas na 1. zlog (eSpeak drugače da na 2.)
+Bregovića	Bre-govića	rodilnik

@@ -1,0 +1,55 @@
+{
+  "model": "openai/whisper-small",
+  "scores": [
+    {
+      "voice": "apple_tina",
+      "passage": "p1_narrative",
+      "wer": 0.375,
+      "cer": 0.047,
+      "words": 72
+    },
+    {
+      "voice": "apple_tina",
+      "passage": "p2_dialogue",
+      "wer": 0.29,
+      "cer": 0.045,
+      "words": 62
+    },
+    {
+      "voice": "apple_tina",
+      "passage": "p3_numbers",
+      "wer": 0.596,
+      "cer": 0.438,
+      "words": 94
+    },
+    {
+      "voice": "piper_artur",
+      "passage": "p1_narrative",
+      "wer": 0.375,
+      "cer": 0.063,
+      "words": 72
+    },
+    {
+      "voice": "piper_artur",
+      "passage": "p2_dialogue",
+      "wer": 0.339,
+      "cer": 0.053,
+      "words": 62
+    },
+    {
+      "voice": "piper_artur",
+      "passage": "p3_numbers",
+      "wer": 0.691,
+      "cer": 0.646,
+      "words": 94
+    }
+  ],
+  "transcripts": {
+    "apple_tina/p1_narrative": "Jesensko jutro se je vleklo čez ljubljansko barje. Megla se je dvigala stravniko in se ovijala okoli vrp, ki so stale objarku kakor utrujeni po potniki. Anna je stopila na prak, si ovila šal okoli v ratu in prisluhnila. Nekaj udaljavi je zaropota vlak, zanim pa je nastala tista posebna tišina, ki je opoznajo samo ljudje, ki zboda je ustajajo še danas bodeš, je rekla sama se bi in se nasmehnila.",
+    "apple_tina/p2_dialogue": "Gdaj si na zadnje spal je uprašala Maja ne spomnim se, je priznal to Maš Morda v Torek, Torek je bi v predtremi dnevi, potem pa vem, da sam spal v Torek, Maja je odložila sko delico in se naslonila na mizone moreš tako napreje. Pojdi domov, stuširaj se in spat. Knihga ne bo ušla, knihga Morda ne, je rekel ticho, rok pa bo.",
+    "apple_tina/p3_numbers": "V mesto je leta 1848 in 40 živelo ena celih 277 ljudi, do leta 1900 pa se ješte vilo pa ospelo na 630.500. Vlak iz Maribora vozi dve uri in 15 minut, pa uratna vozolnica stane 14.80 eur. V tretji in nadstropil, v sobi štetje 12, je doktor novak od pere v okno in pogledal proti tr Trumostoju. Temperatura je bila 215 °C, u laga 65 odstotkov, hitrost vetra pa 12 km na uro. V 19. stoleti v saukrižankah igrali Baha, Mozarta in Betona, danas tam nastopaj od Udi Goran Bregovič, u lado Kresvin in Laibatsk.",
+    "piper_artur/p1_narrative": "Isensko jutro se je vleklo čazljubljansko barje. Mla se je dvigala stravnikov in se uvjela okoli vrpki so stale objarko, kako ru trujeni popotniki. Ana je stopila naprak, si uvila šal okoli v ratu in prisluchnila. Niki je v dalje avi je zaropotal vlak, za njim pa je nastala tista posebna tišina, ki jo poznajo samo ljudje, ki zgodaj ustajajo. Če danes bodoš, je rekla sama sebi in se nasmehnila.",
+    "piper_artur/p2_dialogue": "Bdaj si na zadnje spal. Je vprašala Maja. Ne spomim se, je priznav to maš. Morda v torek. Torek je bi v pred tremi dneri. Potem pa vem, da sem spal v torek. Maja je odlužila sko delico in se naslonila na mizo. Nemoreš tako naprej. Pojdi domov, stuširaj se in spat. Njiga ne bo všla. Njiga morda ne, je reka v ticho, rok pa bo.",
+    "piper_artur/p3_numbers": "V mestu je leta 1880 živelo 1278 judi do leta 1900, pa se je število po uspjelo na 6.ovju. Temperatura je bila 1,20 c, u lada 65 odstotkov, hitrost vetra pa 12 km po šelnicah. V 19. leti so v trižankah igrali baca, mozarta in bithovnav danes tam nastopajo tudi Goranbregovit, u lado Kreslin in Lejbac."
+  }
+}

@@ -1,0 +1,21 @@
+[
+  {
+    "id": "p1_narrative",
+    "label": "Pripovedno besedilo",
+    "why": "Dolge povedi, podredja, mehki prehodi. Testira dihanje in stavčno melodijo.",
+    "text": "Jesensko jutro se je vleklo čez Ljubljansko barje. Megla se je dvigala s travnikov in se ovijala okoli vrb, ki so stale ob jarku kakor utrujeni popotniki. Ana je stopila na prag, si ovila šal okoli vratu in prisluhnila. Nekje v daljavi je zaropotal vlak, za njim pa je nastala tista posebna tišina, ki jo poznajo samo ljudje, ki zgodaj vstajajo. »Še danes bo dež,« je rekla sama sebi in se nasmehnila."
+  },
+  {
+    "id": "p2_dialogue",
+    "label": "Dialog",
+    "why": "Kratki izmenični govori, narekovaji »…«. Testira menjavo registra in pavze med govorci.",
+    "text": "»Kdaj si nazadnje spal?« je vprašala Maja.\n»Ne spomnim se,« je priznal Tomaž. »Morda v torek.«\n»Torek je bil pred tremi dnevi.«\n»Potem pa vem, da sem spal v torek.«\nMaja je odložila skodelico in se naslonila na mizo. »Ne moreš tako naprej. Pojdi domov, stuširaj se in spat. Knjiga ne bo ušla.«\n»Knjiga morda ne,« je rekel tiho, »rok pa bo.«"
+  },
+  {
+    "id": "p3_numbers",
+    "label": "Številke, naslovi, imena",
+    "why": "Datumi, tisočice, decimalke, enote, okrajšave, tuji priimki. Tukaj večina sistemov pade.",
+    "text": "V mestu je leta 1848 živelo 1.278 ljudi, do leta 1900 pa se je število povzpelo na 36.500. Vlak iz Maribora vozi 2 uri in 15 minut, povratna vozovnica stane 14,80 evra. V 3. nadstropju, v sobi št. 12, je dr. Novak odprl okno in pogledal proti Tromostovju. Temperatura je bila 21 °C, vlaga 65 %, hitrost vetra pa 12 km/h. V 19. stoletju so v Križankah igrali Bacha, Mozarta in Beethovna; danes tam nastopajo tudi Goran Bregović, Vlado Kreslin in Laibach.",
+    "spoken": "V mestu je leta tisoč osemsto oseminštirideset živelo tisoč dvesto oseminsedemdeset ljudi, do leta tisoč devetsto pa se je število povzpelo na šestintrideset tisoč petsto. Vlak iz Maribora vozi dve uri in petnajst minut, povratna vozovnica stane štirinajst evrov osemdeset centov. V tretjem nadstropju, v sobi številka dvanajst, je doktor Novak odprl okno in pogledal proti Tromostovju. Temperatura je bila enaindvajset stopinj Celzija, vlaga petinšestdeset odstotkov, hitrost vetra pa dvanajst kilometrov na uro. V devetnajstem stoletju so v Križankah igrali Bacha, Mozarta in Beethovna; danes tam nastopajo tudi Goran Bregović, Vlado Kreslin in Laibach."
+  }
+]

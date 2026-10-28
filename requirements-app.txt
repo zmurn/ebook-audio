@@ -1,0 +1,7 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+python-multipart>=0.0.9
+# AGPL-3.0 (or commercial): see THIRD-PARTY.md before redistributing
+pymupdf>=1.24
+pillow>=10.0
+wordfreq>=3.1
