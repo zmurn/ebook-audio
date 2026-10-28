@@ -44,8 +44,8 @@ MAX_CHUNK = 380
 # fix money, dates, ordinals, symbols and abbreviations, leave digits alone.
 MINIMAL_NORMALIZATION = True
 
-# Sloleks stress correction (local). Off by default until it is A/B tested.
-STRESS_MODE = False
+# Sloleks stress correction (local). On by default: it was the cleanest variant.
+STRESS_MODE = True
 
 # Warmth + glue + a small room. Measured effect: spectral centroid 1.15 → 1.07 kHz,
 # pitch movement unchanged (5.2–5.7 semitones either way).
@@ -382,14 +382,19 @@ def main() -> None:
     ap.add_argument("--full-text", action="store_true",
                     help="spell out numbers too (worse stress, use for testing)")
     ap.add_argument("--no-names", action="store_true", help="skip the pronunciation lexicon")
-    ap.add_argument("--stress", action="store_true",
-                    help="use Sloleks stress positions (local, experimental)")
+    ap.add_argument("--no-stress", dest="stress", action="store_false",
+                    help="disable Sloleks stress (use eSpeak's own stress)")
+    ap.add_argument("--clause-pauses", action="store_true",
+                    help="with --stress: extra pauses at commas (experimental)")
     args = ap.parse_args()
 
     global MINIMAL_NORMALIZATION, STRESS_MODE
     if args.full_text:
         MINIMAL_NORMALIZATION = False
     STRESS_MODE = args.stress
+    if args.clause_pauses:
+        import stress_tts
+        stress_tts.PACED = True
 
     src = Path(args.epub)
     out = Path(args.out) if args.out else src.with_suffix(".m4b")

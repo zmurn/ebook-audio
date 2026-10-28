@@ -37,6 +37,9 @@ def _clause_speed(text: str) -> float:
         return 0.99
     return 1.0
 
+# set by pipeline --clause-pauses; False keeps the clean G behaviour
+PACED = False
+
 _voice = None
 
 
@@ -83,7 +86,7 @@ def _sentence_phonemes(voice, text: str) -> tuple[list[str], dict]:
     return phonemes, stats
 
 
-def _synth_clause(voice, text: str, speed: float) -> np.ndarray:
+def _synth_once(voice, text: str, speed: float) -> np.ndarray:
     from piper.config import SynthesisConfig
 
     phonemes, _ = _sentence_phonemes(voice, text)
@@ -91,38 +94,51 @@ def _synth_clause(voice, text: str, speed: float) -> np.ndarray:
     return voice.phoneme_ids_to_audio(ids, SynthesisConfig(length_scale=speed))
 
 
-def synthesize(text: str, speed: float = 1.0) -> Path | None:
-    """Sentence → wav, with a short breath at commas and varied pace.
+def _write(audio: np.ndarray, voice, key: str) -> Path:
+    out = CACHE / key[:2] / f"{key}.wav"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    peak = float(np.max(np.abs(audio))) or 1.0
+    sf.write(out, (audio / peak * 0.9).astype(np.float32), voice.config.sample_rate)
+    return out
 
-    Long clauses run slightly slower, short ones a touch quicker; a comma gets
-    ~160 ms, a colon or semicolon ~220 ms. That is what stops the words from
-    tumbling out in one block.
-    """
+
+def synthesize(text: str, speed: float = 1.0) -> Path | None:
+    """G: one pass per sentence, Sloleks stress, no added pauses or treatment."""
     text = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", " ", text).strip()
     if not re.search(r"\w", text):
         return None
-    key = hashlib.sha1(f"stress2|{speed:.3f}|{text}".encode()).hexdigest()
+    if PACED:
+        return synthesize_paced(text, speed)
+    key = hashlib.sha1(f"stress-g|{speed:.3f}|{text}".encode()).hexdigest()
     out = CACHE / key[:2] / f"{key}.wav"
     if out.exists():
         return out
-    out.parent.mkdir(parents=True, exist_ok=True)
+    voice = _load()
+    return _write(_synth_once(voice, text, speed), voice, key)
+
+
+def synthesize_paced(text: str, speed: float = 1.02) -> Path | None:
+    """H: clause-level pauses and varied speed (kept as an experiment)."""
+    text = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", " ", text).strip()
+    if not re.search(r"\w", text):
+        return None
+    key = hashlib.sha1(f"stress-h|{speed:.3f}|{text}".encode()).hexdigest()
+    out = CACHE / key[:2] / f"{key}.wav"
+    if out.exists():
+        return out
     voice = _load()
     pieces: list[np.ndarray] = []
     for clause in CLAUSE.findall(text):
         clause = clause.strip()
         if not re.search(r"\w", clause):
             continue
-        audio = _synth_clause(voice, clause, speed * _clause_speed(clause))
-        pieces.append(audio)
+        pieces.append(_synth_once(voice, clause, speed * _clause_speed(clause)))
         pause = SILENCE.get(clause[-1], 0.0)
         if pause:
             pieces.append(np.zeros(int(voice.config.sample_rate * pause), dtype=np.float32))
     if not pieces:
         return None
-    audio = np.concatenate(pieces)
-    peak = float(np.max(np.abs(audio))) or 1.0
-    sf.write(out, (audio / peak * 0.9).astype(np.float32), voice.config.sample_rate)
-    return out
+    return _write(np.concatenate(pieces), voice, key)
 
 
 def stats_for(text: str) -> dict:

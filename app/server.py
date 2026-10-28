@@ -97,7 +97,7 @@ class RenderSettings(BaseModel):
     names: bool = True
     pace: bool = False
     studio: bool = False
-    stress: bool = False
+    stress: bool = True
 
 
 @app.get("/api/books")
@@ -292,7 +292,7 @@ def _run_job(job_id: str) -> None:
                 (done, total, title, job_id),
             )
 
-    pipeline.STRESS_MODE = bool(settings.get("stress", False))
+    pipeline.STRESS_MODE = bool(settings.get("stress", True))
     result = pipeline.render_book(
         Path(book["path"]), out,
         minimal=settings.get("mode", "minimal") == "minimal",

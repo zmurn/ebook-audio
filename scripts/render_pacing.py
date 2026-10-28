@@ -52,7 +52,7 @@ def render(pid: str, text: str, soft: bool) -> Path:
     for block in text.split("\n\n"):
         sentences = split_sentences(block)
         for i, sentence in enumerate(sentences):
-            wav = stress_tts.synthesize(sentence, speed=1.02)
+            wav = stress_tts.synthesize_paced(sentence, speed=1.02)
             if wav is None:
                 continue
             audio, sr = sf.read(wav, dtype="float32")

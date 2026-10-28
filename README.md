@@ -51,10 +51,12 @@ za ~888.000 besednih oblik; uporabimo jih kot tabelo naglasa.
 ./scripts/get_sloleks.sh        # 46 MB prenosa + 1,3 GB razpakiranja + 6 MB tabele
 ```
 
-Nato v aplikaciji obkljukaj **Sloleks naglas**, ali:
+Naglas je **privzeto vključen**. Izklopiš ga z `--no-stress`; v aplikaciji je
+kljukica **Sloleks naglas** že obkljukana.
 
 ```bash
-.venv-app/bin/python pipeline.py knjiga.epub -o knjiga.m4b --stress
+.venv-app/bin/python pipeline.py knjiga.epub -o knjiga.m4b          # G (privzeto)
+.venv-app/bin/python pipeline.py knjiga.epub -o knjiga.m4b --no-stress
 ```
 
 Podatki so licencirani **CC BY-NC-SA 4.0** (osebna raba); tabela se ne commita.

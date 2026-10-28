@@ -534,3 +534,13 @@ Lahke rešitve lahko:
 Prava sprememba ostaja **drug model** (Kokoro fine-tune) ali oblak.
 
 Na strani je zdaj **J = H + LavaSR**; primerjaj H in J.
+
+
+## Končna izbira: G
+
+Poslušal si G (naglas), H (naglas + pavze), I (H + mehka obdelava) in J (H + LavaSR).
+**G je najčistejši.** Zato je G privzetek:
+
+- `pipeline.py` ima Sloleks naglas **vključen privzeto** (`--no-stress` ga izklopi).
+- Aplikacija ima kljukico **Sloleks naglas** privzeto obkljukano.
+- H/I/J ostajajo na strani kot poskusi; `--clause-pauses` vrne H.
