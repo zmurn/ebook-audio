@@ -122,6 +122,7 @@ ocene se shranijo v `localStorage`, izvoz v JSON. Glas C je isti kot B, le besed
 
 Rezultati in priporočilo: [`bakeoff/FINDINGS.md`](bakeoff/FINDINGS.md).
 Raziskava o naravnosti in lokalnih modelih: [`RESEARCH-naturalness.md`](RESEARCH-naturalness.md).
+Izgovorjava, fran.si, Sloleks in odločitev o glasu: [`PRONUNCIATION-DATA.md`](PRONUNCIATION-DATA.md).
 
 Front-end (kaj eSpeak res izgovori): [`bakeoff/frontend.md`](bakeoff/frontend.md) — 9 ✓ / 17 ✗
 od 27 težjih konstruktov. To je hkrati regresijski seznam za `norm_sl`.
